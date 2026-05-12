@@ -1,15 +1,30 @@
 import calcularEnvio from "./envio.js";
 import calcularDescuento from "./descuentos.js";
-import vip from "./vip.js";
+import esVIP from "./vip.js";
 
-let nombre= "Nadia";
-let cantidad= 5;
-let Total= 250;
+let nombre = prompt("Nombre del cliente:");
+let cantidad = Number(prompt("Cantidad de productos:"));
+let total = Number(prompt("Monto total:"));
 
-calcularEnvio (cantidad, Total);
-calcularDescuento(Total);
-vip(Total,cantidad);
+console.log("Hola ", nombre);
 
+
+let totalConDescuento = calcularDescuento(total);
+
+let envio = calcularEnvio(cantidad);
+
+
+if (envio === null) {
+    console.log("Compra no válida");
+} else {
+
+    let totalFinal = totalConDescuento + envio;
+
+    console.log("Nuevo total: $" + totalFinal);
+
+    
+    esVIP(totalFinal, cantidad);
+}
 
 
 

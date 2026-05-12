@@ -1,9 +1,8 @@
-export default function vip(Total,cantidad){
-    if(cantidad>20 && Total>1000){
-            console.log("eres vip");
+export default function esVIP(total, cantidad) {
+    if (cantidad > 20 && total > 1000) {
+        console.log("Eres VIP");
     }
-    else {
-        console.log("No eres vip");
+    else{
+    console.log("No eres VIP");
     }
-
 }
